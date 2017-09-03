@@ -1,0 +1,416 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+
+    <title>
+
+        StockMarketPredcitions &middot;
+
+    </title>
+
+
+      <link href='https://fonts.googleapis.com/css?family=Lora:400,400italic|Work+Sans:300,400,500,600' rel='stylesheet' type='text/css'>
+      <link href="/static/assets/css/toolkit-startup.css" rel="stylesheet">
+      <link href="/static/assets/css/application-startup.css" rel="stylesheet">
+
+
+
+
+    <style>
+      /* note: this is a hack for ios iframe for bootstrap themes shopify page */
+      /* this chunk of css is not part of the toolkit :) */
+      /* …curses ios, etc… */
+      @media (max-width: 768px) and (-webkit-min-device-pixel-ratio: 2) {
+        body {
+          width: 1px;
+          min-width: 100%;
+          *width: 100%;
+        }
+        #stage {
+          height: 1px;
+          overflow: auto;
+          min-height: 100vh;
+          -webkit-overflow-scrolling: touch;
+        }
+      }
+    </style>
+  </head>
+
+
+<body>
+
+
+
+
+
+<div class="stage" id="stage">
+
+<div class="block block-inverse block-fill-height app-header"
+     style="background-image: url(/static/assets/img/startup-1.jpg);">
+
+  <div class="container py-4 fixed-top app-navbar">
+  <nav class="navbar navbar-transparent navbar-padded navbar-toggleable-sm">
+    <button
+      class="navbar-toggler navbar-toggler-right hidden-md-up"
+      type="button"
+      data-target="#stage"
+      data-toggle="stage"
+      data-distance="-250">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <a class="navbar-brand mr-auto" href="">
+    </a>
+
+    <div class="hidden-sm-down text-uppercase">
+      <ul class="navbar-nav">
+        <li class="nav-item px-1 ">
+          <a class="nav-link" href="#">StartUp</a>
+        </li>
+        <li class="nav-item px-1 ">
+          <a class="nav-link" href="https://twitterwebsite.herokuapp.com/">Twitter Sentiment Analysis</a>
+        </li>
+        <li class="nav-item px-1 ">
+          <a class="nav-link" href="">My Portfolio</a>
+        </li>
+        <li class="nav-item px-1 ">
+          <a class="nav-link" href="">Happy Website</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+
+  <img class="app-graph"  src="/static/assets/img/startup-0.svg">
+
+  <div class="block-xs-middle pb-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-10 col-lg-6">
+          <h1 class="block-titleData frequency">Analytics on demand.</h1>
+          <div class="btn-toolbar-item input-with-icon">
+            <input type="text" value="01/01/15  to Today" class="form-control" data-provide="datepicker">
+            <span class="icon icon-calendar"></span>
+          </div>
+          <p class="lead mb-4 text-muted">Start and End date of the till which the financial record  you can change the intial date  </p>
+          <form action="{{url_for('.plot')}}" method="POST">
+                  <label>Type Company Code from NASDAQ Listing </label>
+                  <input class="form-control" id="phone" type="name" name="company_ip" placeholder="Company NASDAQ listing code" required data-validation-required-message="Please enter your phone number.">
+                  <p></p>
+                  <button class="btn btn-primary btn-lg">Try it now</button>
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="block block-secondary app-iphone-block">
+  <div class="container">
+    <div class="row app-align-center">
+    <div class="container">
+            {%block content%}
+            {%endblock%}
+    </div>
+
+      <div class="col-md-6 offset-md-1 col-sm-12 offset-sm-0">
+        <h6 class="text-muted text-uppercase">Rich Information</h6>
+        <h3>Top 100 compananies and thier codes trending that have top stocks &amp; which you can monitor and predict.</h3>
+        <p>AAL
+American Airlines Group Inc
+AAPL
+Apple Inc
+ADBE
+Adobe Systems Inc
+ADI
+Analog Devices Inc
+ADP
+Automatic Data Processing Inc
+ADSK
+Autodesk Inc
+AKAM
+Akamai Technologies Inc
+ALXN
+Alexion Pharmaceuticals Inc
+AMAT
+Applied Materials Inc
+AMGN
+Amgen Inc
+AMZN
+Amazon.com Inc
+ATVI
+Activision Blizzard Inc
+AVGO
+Broadcom Ltd
+BIDU
+Baidu Inc
+BIIB
+Biogen Inc
+BMRN
+Biomarin Pharmaceutical Inc
+CA
+CA Inc
+CELG
+Celgene Corp
+CERN
+Cerner Corp
+CHKP
+Check Point Software Technologies Ltd
+CHTR
+Charter Communications Inc
+CTRP
+Ctrip.Com International Ltd
+CTAS
+Cintas Corp
+CSCO
+Cisco Systems Inc
+CTXS
+Citrix Systems Inc
+CMCSA
+Comcast Corp
+COST
+Costco Wholesale Corp
+CSX
+CSX Corp
+CTSH
+Cognizant Technology Solutions Corp
+DISCA
+Discovery Communications Inc
+DISCK
+Discovery Communications Inc
+DISH
+DISH Network Corp
+DLTR
+Dollar Tree Inc
+EA
+Electronic Arts
+EBAY
+eBay Inc
+ESRX
+Express Scripts Holding Co
+EXPE
+Expedia Inc
+FAST
+Fastenal Co
+FB
+Facebook
+FISV
+Fiserv Inc
+FOX
+21st Century Fox Class B
+FOXA
+21st Century Fox Class A
+GILD
+Gilead Sciences Inc
+GOOG
+Alphabet Class C
+GOOGL
+Alphabet Class A
+HAS
+Hasbro Inc
+HSIC
+Henry Schein Inc
+HOLX
+Hologic Inc
+ILMN
+Illumina Inc
+INCY
+Incyte Corp
+INTC
+Intel Corp
+INTU
+Intuit Inc
+ISRG
+Intuitive Surgical Inc
+Symbol	Name
+JBHT
+J.B. Hunt Transport Services Inc
+JD
+JD.com Inc
+KLAC
+KLA-Tencor Corp
+KHC
+Kraft Heinz Co
+LBTYK
+Liberty Global PLC
+LILA
+Liberty Global PLC
+LBTYA
+Liberty Global PLC
+QVCA
+Liberty Interactive Corp
+MELI
+MercadoLibre Inc
+MAR
+Marriott International Inc
+MAT
+Mattel Inc
+MDLZ
+Mondelez International Inc
+MNST
+Monster Beverage Corp
+MSFT
+Microsoft Corp
+MU
+Micron Technology Inc
+MXIM
+Maxim Integrated Products Inc
+MYL
+Mylan NV
+NCLH
+Norwegian Cruise Line Holdings Ltd
+NFLX
+Netflix Inc
+NTES
+NetEase Inc
+NVDA
+NVIDIA Corp
+PAYX
+Paychex Inc
+PCLN
+The Priceline Group
+PYPL
+PayPal Holdings Inc
+QCOM
+Qualcomm Inc
+REGN
+Regeneron Pharmaceuticals Inc
+ROST
+Ross Stores Inc
+SHPG
+Shire PLC
+SIRI
+Sirius XM Holdings Inc
+SWKS
+Skyworks Solutions Inc
+SBUX
+Starbucks Corp
+SYMC
+Symantec Corp
+TSCO
+Tractor Supply Co
+TXN
+Texas Instruments Inc
+TMUS
+T-Mobile US Inc
+ULTA
+Ulta Beauty Inc
+VIAB
+Viacom Inc
+VOD
+Vodafone Group PLC
+VRTX
+Vertex Pharmaceuticals Inc
+WBA
+Walgreens Boots Alliance Inc
+WDC
+Western Digital Corp
+XRAY
+Dentsply Sirona Inc
+IDXX
+IDEXX Laboratories Inc
+LILAK
+Liberty Global PLC
+LRCX
+Lam Research Corp
+MCHP
+Microchip Technology Inc
+ORLY
+O'Reilly Automotive Inc
+PCAR
+PACCAR Inc
+STX
+Seagate Technology PLC
+TSLA
+Tesla Inc
+VRSK
+Verisk Analytics Inc
+WYNN
+Wynn Resorts Ltd
+XLNX
+Xilinx Inc
+</p>
+        <p class="lead mb-4">We combine immediate real time events with rich historical data to help answer the toughest questions about retention, growth, and engagement.</p>
+        <div class="row hidden-md-down">
+          <div class="col-sm-6 mb-3">
+            <h5>Data Collection</h5>
+            <p>We use google finance data to collect companies data .</p>
+          </div>
+          <div class="col-sm-6">
+            <h5>Data Visualisation</h5>
+            <p>We use bokeh to do our visualisation ,can zoom in out and also show the predicted stock information</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="block block-inverse block-secondary app-code-block">
+  <div class="container">
+    <div class="row app-align-center">
+      <div class="col-md-5 push-md-7">
+        <pre class="app-code">
+<span>1</span> <span>Keras Code</span>Using RNN
+<span>2</span>
+<span>3</span>  model = Sequential()
+<span>4</span>  model.add(Dense(8, input_dim=1, activation='relu'))
+<span>5</span>  model.add(Dense(1))
+<span>6</span>  model.compile(loss='mean_squared_error', optimizer='adam')
+<span>7</span>  model.fit(trainX, trainY, nb_epoch=200, batch_size=2, verbose=2)
+<span>8</span>  prediction = model.predict(np.array([dataset[0]]))
+<span>16</span>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+<div class="block block-inverse app-footer">
+ <div class="container">
+    <div class="row">
+      <div class="col-md-5 mb-5">
+        <ul class="list-unstyled list-spaced">
+          <li class="mb-2"><h6 class="text-uppercase">About</h6></li>
+          <li class="text-muted">
+             <p>I am Hari Saran,I am completing my Masters in Computer Engineering at Boston University. With a specialisation in Data Analytics and Mobile Development my skills include Native Android and Ios App development, Web Development(using Flask and Django) ,Machine Learning(using numpy ,Scipy,pandas,bokeh) and Deep Learning (using Tensorflow and Keras),Cloud Techonolgies(Experience in using Azure and AWS Cloud) .You can see my projects at my </p> <a href="https://github.com/chhari">github account</a>.
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-2 offset-md-1 mb-5">
+        <ul class="list-unstyled list-spaced">
+        </ul>
+      </div>
+      <div class="col-md-2 mb-5">
+        <ul class="list-unstyled list-spaced">
+        </ul>
+      </div>
+      <div class="col-md-2 mb-5">
+        <ul class="list-unstyled list-spaced">
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+    <script src="/static/assets/js/jquery.min.js"></script>
+    <script src="/static/assets/js/toolkit.js"></script>
+    <script src="/static/assets/js/tether.min.js"></script>
+    <script src="/static/assets/js/application.js"></script>
+  </body>
+</html>

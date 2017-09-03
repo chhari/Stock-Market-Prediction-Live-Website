@@ -1,0 +1,11 @@
+{%extends "index.html"%}
+{%block content%}
+<link rel="stylesheet" href={{cdn_css | safe}} type="text/css" />
+<script type="text/javascript" src={{cdn_js | safe}}></script>
+
+<h1>This is our prediction for tomorrow  for the given stock</h1>
+<h1>{{predicted | safe}} </h1>
+</div>
+{{script1 | safe}}
+{{div1 | safe}}
+{%endblock%}
